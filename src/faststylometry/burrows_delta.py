@@ -156,6 +156,7 @@ def get_token_proportions(corpus: Corpus):
     :param corpus:  The corpus to run the operation on and store the result in.
     """
 
+    corpus.total_token_counts_by_author[corpus.total_token_counts_by_author < 1] = 1
     corpus.token_proportions = corpus.token_counts_by_author / corpus.total_token_counts_by_author
 
 
